@@ -45,9 +45,11 @@
       <div class="grid">
         <article class="project reveal" data-link="https://cvdresearch.netlify.app">
            
-           <div class="thumb">
-    <img src="./images/cvd-chatbot.png" alt="Screenshot of the CVD Chatbot interface">
-  </div>
+           <div class="thumb" style="
+  background-image: url('./images/cvd-chatbot.png');
+  background-size: cover;
+  background-position: center;
+"></div>
           <div class="project-body">
             <h3>CVD Chatbot</h3>
             <p class="muted">An AI conversational assistant that supports cardiovascular researchers by delivering evidence-based answers directly from PubMed. The chatbot uses a retrieval-augmented generation pipeline, combining semantic search with GPT-based models to minimize hallucinations and ensure citation-backed responses. It features a React web interface that displays references, confidence scores, and fallback options when evidence is insufficient.
