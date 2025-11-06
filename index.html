@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Software Developer – Portfolio</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="./css/base.css">
+  <link rel="stylesheet" href="./css/layout.css">
+  <link rel="stylesheet" href="./css/components.css">
+  <link rel="stylesheet" href="./css/utilities.css">
+  <link rel="stylesheet" href="./css/themes.css">
+</head>
+<body>
+  <header>
+    <div class="nav">
+      <div class="brand">Developer • Portfolio</div>
+      <nav aria-label="Primary">
+        <ul>
+          <li><a href="#home">Home</a></li>
+          <li><a href="#projects">Projects</a></li>
+          <li><a href="#experience">Experience</a></li>
+        </ul>
+      </nav>
+      <button class="toggle-btn" id="themeToggle" aria-pressed="false">🌙</button>
+    </div>
+  </header>
+
+  <main id="home" class="container">
+    <section class="hero">
+      <div class="card reveal">
+        <div class="kicker">Software Developer</div>
+        <h1>Katarina Cedolin</h1>
+        <p>Motivated and detail-oriented Computer Science student with a strong academic background and hands-on experience in generative AI, web application development and leadership. Seeking an internship to enhance technical expertise and contribute to innovative projects in software development and AI.
+</p>
+        
+      </div>
+      <figure class="hero-visual reveal" aria-label="Futuristic white/grey visual"></figure>
+    </section>
+
+    <section id="projects">
+      <div class="section-title"><span class="kicker">Selected Work</span><h2>Projects</h2></div>
+      <div class="grid">
+        <article class="project reveal" data-link="https://cvdresearch.netlify.app">
+           
+          <div class="thumb" role="img" aria-label="Project thumbnail"></div>
+          <div class="project-body">
+            <h3>CVD Chatbot</h3>
+            <p class="muted">An AI conversational assistant that supports cardiovascular researchers by delivering evidence-based answers directly from PubMed. The chatbot uses a retrieval-augmented generation pipeline, combining semantic search with GPT-based models to minimize hallucinations and ensure citation-backed responses. It features a React web interface that displays references, confidence scores, and fallback options when evidence is insufficient.
+</p>
+            <div class="tags"><span class="tag">AI</span><span class="tag">LLM's</span><span class="tag">Web Development</span><span class="tag">Microsoft Azure</span><span class="tag">Healthcare Technology</span></div>
+          </div>
+      
+        </article>
+        <article class="project reveal" data-link="./projects/clinical-deid/index.html">
+          <div class="thumb" role="img" aria-label="Project thumbnail"></div>
+          <div class="project-body">
+            <h3>Clinical Notes De-Identifier</h3>
+            <p class="muted">Modular storefront powered by an API‑first architecture and edge caching.</p>
+            <div class="tags"><span class="tag">Computer Vision</span><span class="tag">Neural Networks</span><span class="tag">Python</span></div>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section id="experience">
+      <div class="section-title"><span class="kicker">Career</span><h2>Experience</h2></div>
+      <div class="experience">
+        <div class="exp-item reveal">
+          <h3>Research Assistant, Generative AI in Cardiovascular Health 
+ – SDSU Research Foundation</h3>
+          <p class="muted">Research project for the development of an AI-powered chatbot that assists in analyzing cardiovascular disease research literature.
+
+
+Duties include creating, training and testing the chatbot, performing preliminary research and conducting a literature review, developing a web application to make chatbot accessible to the public, and co-authoring the paper.
+ (Jan 2025–Aug 2025)</p>
+  <div class="tags"><span class="tag">AI</span><span class="tag">WebDev</span><span class="tag">Azure</span></div>
+
+        </div>
+        <div class="exp-item reveal">
+          <h3>Research Assistant, LLM’s in Social Media Influence Analysis 
+</h3>
+          <p class="muted">Research project for a multifaceted analysis of COVID-19 Twitter discourse by building an annotated influencer dataset and demonstrating how transformer models and large language models can effectively detect user type, sentiment, emotion, and scientific claims with high accuracy.
+
+
+Duties included conducting sentiment and emotion analysis on social media datasets to establish a performance baseline for evaluating the AI chatbot.
+ (Aug 2025– Sept 2025)</p>
+  <div class="tags"><span class="tag">AI</span><span class="tag">WebDev</span><span class="tag">Azure</span></div>
+        </div>
+        <div class="exp-item reveal">
+          <h3>Founder and President - Helping Hands for Homelessness SDSU
+</h3>
+          <p class="muted">Research project for the development of an AI-powered chatbot that assists in analyzing cardiovascular disease research literature.
+
+
+Founded a Recognized Student Organization on campus with the goals of providing resources to people experiencing homelessness in San Diego and creating opportunities for students to volunteer with impact. 
+
+
+Duties include managing the executive board; collaborating with local charities, such as Vituity Cares and PATH, and campus organizations, like the University Police and other Student Organizations; planning large-scale events; and creating and aiding in university research opportunities.
+
+ (Oct 2024–Present)</p>
+  <div class="tags"><span class="tag">AI</span><span class="tag">WebDev</span><span class="tag">Azure</span></div>
+
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    © <span id="year"></span> Katarina&nbsp;Cedolin. Crafted with clean HTML, CSS, and JS.
+  </footer>
+
+  <script src="./js/main.js"></script>
+</body>
+</html>

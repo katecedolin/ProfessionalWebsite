@@ -1,0 +1,11 @@
+{
+  "file" : "data/sample_1.txt",
+  "counts" : {
+    "DATE" : 3,
+    "ID" : 1,
+    "EMAIL" : 1,
+    "NAME" : 1,
+    "PHONE" : 0
+  },
+  "chars_redacted" : 72
+}

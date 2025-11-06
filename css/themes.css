@@ -1,0 +1,10 @@
+body.dark {
+  --bg: #0f1115;
+  --bg-elev: #1a1d22;
+  --ink-1: #f6f7f9;
+  --ink-2: #d0d3d9;
+  --ink-3: #9ca0a8;
+  --stroke: #2a2d33;
+  --accent: #3a3f47;
+  background: radial-gradient(1200px 600px at 80% -10%, #1a1d22 0%, var(--bg) 60%) fixed;
+}

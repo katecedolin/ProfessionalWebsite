@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Clinical Notes De-Identifier</title>
+  <link rel="stylesheet" href="../../css/base.css">
+  <style>
+    .demo-wrap { padding: 16px; max-width: 900px; margin: auto; }
+    pre {
+      background: var(--bg-elev);
+      padding: 12px;
+      border-radius: 8px;
+      border: 1px solid var(--stroke);
+      white-space: pre-wrap;
+      word-wrap: break-word;
+    }
+    .grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 16px;
+      margin-top: 12px;
+    }
+    h3 { margin: 0 0 12px; }
+    .label { font-size: 14px; color: var(--ink-3); margin-bottom: 6px; }
+  </style>
+</head>
+<body>
+  <div class="demo-wrap">
+    <h3>Clinical Notes De-Identifier (Java + Regex Rules)</h3>
+    <p>
+      This demo shows how our CLI tool redacts Protected Health Information (PHI) 
+      such as <strong>names, dates, phone numbers, emails, and IDs</strong> 
+      from clinical notes. Output includes both the redacted text and a JSON summary report.
+    </p>
+
+    <div class="grid">
+      <div>
+        <div class="label">Original Note</div>
+        <pre id="input-note"></pre>
+      </div>
+      <div>
+        <div class="label">Redacted Note</div>
+        <pre id="redacted-note"></pre>
+      </div>
+    </div>
+
+    <div style="margin-top:20px;">
+      <div class="label">Report JSON</div>
+      <pre id="report-json"></pre>
+    </div>
+  </div>
+
+  <script src="./app.js"></script>
+</body>
+</html>

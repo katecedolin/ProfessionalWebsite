@@ -1,0 +1,34 @@
+plugins {
+  id 'java'
+  id 'application'
+  id 'com.github.johnrengelman.shadow' version '8.1.1'
+}
+
+group = 'com.you'
+version = '0.1.0'
+java { toolchain { languageVersion = JavaLanguageVersion.of(17) } }
+
+repositories { mavenCentral() }
+
+dependencies {
+  testImplementation 'org.junit.jupiter:junit-jupiter:5.10.2'
+  implementation 'com.fasterxml.jackson.core:jackson-databind:2.17.1'
+  // optional tiny helper:
+  implementation 'org.apache.commons:commons-lang3:3.14.0'
+}
+
+application {
+  mainClass = 'com.you.deid.App'
+}
+
+tasks.withType(Test).configureEach {
+  useJUnitPlatform()
+}
+
+tasks.jar {
+  manifest { attributes 'Main-Class': application.mainClass.get() }
+}
+
+tasks.shadowJar {
+  archiveClassifier.set('all')
+}

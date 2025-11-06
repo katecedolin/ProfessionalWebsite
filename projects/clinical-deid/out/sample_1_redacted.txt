@@ -1,0 +1,7 @@
+Patient: [NAME]
+DOB: [DATE]
+Seen on: [DATE]
+Phone: (555) 123-4567
+Email: [EMAIL]
+[ID]
+Narrative: Patient reports mild headache since [DATE].

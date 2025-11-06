@@ -1,0 +1,7 @@
+Patient: John Doe
+DOB: 01/02/1980
+Seen on: 2024-12-31
+Phone: (555) 123-4567
+Email: john.doe@hospital.org
+MRN: A12B3C4
+Narrative: Patient reports mild headache since Jan 5, 2024.

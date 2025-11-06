@@ -1,0 +1,63 @@
+/* Split view for project page */
+.project-split {
+  display: grid;
+  grid-template-columns: 1.1fr 1fr;
+  gap: clamp(16px, 2.5vw, 24px);
+  align-items: stretch;
+}
+.preview {
+  background: var(--bg-elev);
+  border: 1px solid var(--stroke);
+  border-radius: var(--radius-xl);
+  overflow: hidden;
+  box-shadow: var(--shadow-1);
+}
+.preview iframe {
+  width: 100%;
+  height: min(70vh, 800px);
+  border: 0;
+  background: var(--bg);
+}
+.code-pane {
+  background: var(--bg-elev);
+  border: 1px solid var(--stroke);
+  border-radius: var(--radius-xl);
+  display: flex;
+  flex-direction: column;
+  box-shadow: var(--shadow-1);
+  overflow: hidden;
+}
+.code-tabs {
+  display: flex;
+  gap: 8px;
+  padding: 10px;
+  border-bottom: 1px solid var(--stroke);
+  background: color-mix(in oklab, var(--bg-elev) 90%, transparent);
+}
+.code-tabs button {
+  appearance: none;
+  border: 1px solid var(--stroke);
+  background: var(--bg);
+  padding: 6px 10px;
+  border-radius: 999px;
+  font-weight: 600;
+  cursor: pointer;
+}
+.code-tabs button[aria-selected="true"] {
+  background: var(--bg-elev);
+  box-shadow: var(--shadow-1);
+}
+.code-scroll {
+  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+  font-size: 13px;
+  line-height: 1.5;
+  padding: 14px;
+  white-space: pre;
+  overflow: auto;
+  height: min(70vh, 800px);
+  color: var(--ink-2);
+}
+@media (max-width: 960px){
+  .project-split { grid-template-columns: 1fr; }
+  .preview iframe, .code-scroll { height: 50vh; }
+}

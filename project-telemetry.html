@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Project – Telemetry Dashboard</title>
+  <link rel="stylesheet" href="./css/base.css">
+  <link rel="stylesheet" href="./css/layout.css">
+  <link rel="stylesheet" href="./css/components.css">
+  <link rel="stylesheet" href="./css/utilities.css">
+  <link rel="stylesheet" href="./css/themes.css">
+  <link rel="stylesheet" href="./css/project-page.css">
+</head>
+<body>
+  <header>
+    <div class="nav">
+      <div class="brand">Developer • Portfolio</div>
+      <nav aria-label="Primary">
+        <ul>
+          <li><a href="./index.html#home">Home</a></li>
+          <li><a href="./index.html#projects">Projects</a></li>
+          <li><a href="./index.html#experience">Experience</a></li>
+        </ul>
+      </nav>
+      <button class="toggle-btn" id="themeToggle" aria-pressed="false">🌙</button>
+    </div>
+  </header>
+
+  <main class="container">
+    <section class="project-split">
+      <div class="preview reveal">
+        <iframe title="Telemetry Demo" src="./projects/telemetry/index.html"></iframe>
+      </div>
+      <div class="code-pane reveal">
+        <div class="code-tabs" role="tablist" aria-label="Source files">
+          <button role="tab" aria-selected="true" aria-controls="code-html" id="tab-html">index.html</button>
+          <button role="tab" aria-selected="false" aria-controls="code-js" id="tab-js">app.js</button>
+        </div>
+        <pre id="code-html" class="code-scroll" role="tabpanel" aria-labelledby="tab-html">&lt;!DOCTYPE html&gt;
+&lt;html lang=&quot;en&quot;&gt;
+&lt;head&gt;
+  &lt;meta charset=&quot;utf-8&quot; /&gt;
+  &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1&quot; /&gt;
+  &lt;title&gt;Telemetry Demo&lt;/title&gt;
+  &lt;link rel=&quot;stylesheet&quot; href=&quot;../../css/base.css&quot;&gt;
+  &lt;style&gt;
+    .demo-wrap { padding: 16px; }
+    .charts { display: grid; grid-template-columns: repeat(12, 1fr); gap: 10px; }
+    .bar { grid-column: span 3; height: 120px; border-radius: 12px; background: var(--bg-elev); border: 1px solid var(--stroke); display:flex; align-items:flex-end; overflow:hidden; }
+    .bar &gt; span { display:block; width:100%; background: linear-gradient(180deg, #89b5ff, #3f8cff); transition: height .3s ease; }
+    .label { font-size: 12px; color: var(--ink-3); margin-top: 6px; text-align:center; }
+  &lt;/style&gt;
+&lt;/head&gt;
+&lt;body&gt;
+  &lt;div class=&quot;demo-wrap&quot;&gt;
+    &lt;h3 style=&quot;margin:0 0 8px;&quot;&gt;Live Telemetry (simulated)&lt;/h3&gt;
+    &lt;div id=&quot;charts&quot; class=&quot;charts&quot;&gt;&lt;/div&gt;
+  &lt;/div&gt;
+  &lt;script src=&quot;./app.js&quot;&gt;&lt;/script&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+</pre>
+        <pre id="code-js" class="code-scroll" role="tabpanel" aria-labelledby="tab-js" hidden>const charts = document.getElementById(&#x27;charts&#x27;);
+const N = 8;
+const bars = [];
+
+for (let i = 0; i &lt; N; i++) {
+  const wrap = document.createElement(&#x27;div&#x27;);
+  wrap.className = &#x27;bar&#x27;;
+  const fill = document.createElement(&#x27;span&#x27;);
+  wrap.appendChild(fill);
+  charts.appendChild(wrap);
+  bars.push(fill);
+  const label = document.createElement(&#x27;div&#x27;);
+  label.className = &#x27;label&#x27;;
+  label.textContent = &#x27;Node &#x27; + (i + 1);
+  charts.appendChild(label);
+  label.style.gridColumn = &#x27;span 3&#x27;;
+}
+
+function tick(){
+  bars.forEach((el, i) =&gt; {
+    const val = 20 + Math.abs(80 * Math.sin((Date.now()/700) + i));
+    el.style.height = val + &#x27;%&#x27;;
+  });
+  requestAnimationFrame(tick);
+}
+tick();
+</pre>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    © <span id="year"></span> Your&nbsp;Name. Crafted with clean HTML, CSS, and JS.
+  </footer>
+
+  <script src="./js/main.js"></script>
+  <script>
+    const tabs = [
+      {btn: document.getElementById('tab-html'), pane: document.getElementById('code-html')},
+      {btn: document.getElementById('tab-js'), pane: document.getElementById('code-js')}
+    ];
+    tabs.forEach((t, i) => {
+      t.btn.addEventListener('click', () => {
+        tabs.forEach((x, k) => {
+          const sel = k === i;
+          x.btn.setAttribute('aria-selected', sel ? 'true' : 'false');
+          x.pane.hidden = !sel;
+        });
+      });
+    });
+  </script>
+</body>
+</html>
