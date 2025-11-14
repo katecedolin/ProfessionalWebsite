@@ -55,3 +55,17 @@ footer { padding: 36px var(--space); border-top: 1px solid var(--stroke); color:
 /* Reveal on scroll */
 .reveal { opacity: 0; translate: 0 14px; transition: opacity .6s ease, translate .6s ease; }
 .reveal.is-visible { opacity: 1; translate: 0 0; }
+
+.hero-visual > img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;   /* fills the box without distortion */
+  z-index: 0;          /* sits under the shine overlay */
+}
+
+.hero-visual::after {
+  z-index: 1;          /* keep your diagonal sheen on top */
+}
+
